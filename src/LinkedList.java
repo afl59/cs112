@@ -1,7 +1,8 @@
+import java.util.NoSuchElementException;
 
 public class LinkedList<T> {
 	private Node<T> front;
-	int size;
+	private int size;
 	
 	public LinkedList() {
 		front = null;
@@ -22,6 +23,10 @@ public class LinkedList<T> {
 	}
 	
 	public T deleteFront() {
+		
+		if (front == null) {
+			throw new NoSuchElementException("List is empty");
+		}
 		T toReturn = front.getData();
 		front = front.getNext();
 		return toReturn;
