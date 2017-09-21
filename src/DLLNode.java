@@ -1,7 +1,7 @@
 
 public class DLLNode<T> {
 	private T data;
-	private DLLNode<T> previous, next;
+	private DLLNode<T> previous, next; // Link forwards and backwards
 	
 	public DLLNode(T data, DLLNode<T> previous, DLLNode<T> next) {
 		this.data = data;

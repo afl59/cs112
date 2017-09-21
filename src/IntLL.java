@@ -3,26 +3,16 @@ public class IntLL {
 	
 	public static void main(String[] args) {
 		IntNode L = null;
-		L = addToFront(5, L);
-		L = addToFront(4, L);
+		L = addToFront(21, L);
+		L = addToFront(15, L);
+		L = addToFront(12, L);
+		L = addToFront(9, L);
 		L = addToFront(3, L);
 		traverse(L);
 		System.out.println();
 		
-		L = deleteFront(L); // L updates so that first element is excluded
-		traverse(L);
-		System.out.println();
-		
-		L = addToFront(2, L);
-		traverse(L);
-		System.out.println();
-		
-		addAfter(L, 5, 6);
-		addAfter(L, 2, 3);
-		traverse(L);
-		System.out.println();
-		
-		deleteNode(L, 4);
+		deleteEveryOther(L);
+	
 		traverse(L);
 		System.out.println();
 	}
@@ -61,6 +51,43 @@ public class IntLL {
 		}
 	}
 	
+	public static IntNode addBefore(IntNode front, int target, int newItem) {
+		IntNode ptr = front;
+		while(ptr != null && ptr.getNext().getData() != target) {
+			ptr = ptr.getNext();
+		}
+		if(ptr != null) {
+			// Target data found, ptr points to item before it.
+			ptr.setNext(new IntNode(target, ptr.getNext()));
+			return front;
+		} else {
+			return front;
+		}
+	}
+	
+	public static IntNode addBeforeLast(IntNode front, int item) {
+		IntNode ptr = front;
+		if(front.getNext() == null) {
+			return null;
+		}
+		while(ptr != null && ptr.getNext().getNext() != null) {
+			ptr = ptr.getNext();
+		}
+		if(ptr.getNext().getNext() == null) {
+			ptr.setNext(new IntNode(item, ptr.getNext()));
+			return front;
+		}
+		else {
+			return front;
+		}
+	}
+	
+	public static void deleteEveryOther(IntNode front) {
+		for(IntNode ptr = front; ptr.getNext() != null; ptr = ptr.getNext()) {
+			ptr.setNext(ptr.getNext().getNext());
+		}
+	}
+	
 	// Deletes node with target data
 	public static void deleteNode(IntNode front, int target) {
 		IntNode ptr = front;
@@ -72,5 +99,16 @@ public class IntLL {
 		}
 	}
 	
-	
+	public static IntNode commonElements(IntNode frontL1, IntNode frontL2) {
+		IntNode newFront = null;
+		IntNode markEnd = newFront;
+		for(IntNode ptrA = frontL1; ptrA != null; ptrA = ptrA.getNext()) {
+			for(IntNode ptrB = frontL2; ptrB != null; ptrB = ptrB.getNext()) {
+				if(ptrA.getData() == ptrB.getData()) {
+					
+				}
+			}
+		}
+		return null;
+	}
 }

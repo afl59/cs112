@@ -67,4 +67,23 @@ public class StringLinkedList {
 		}
 		return front;
 	}
+	
+	public int numberOfOccurrences(StringNode front, String target) {
+		int counter = 0;
+		for(StringNode ptr = front; ptr != null; ptr = ptr.getNext()) {
+			if(target.equals(ptr.getData())) {
+				counter++;
+			}
+		}
+		return counter;
+	}
+	
+	public StringNode deleteAllOccurrences(StringNode front, String target) {
+		for(StringNode ptr = front; ptr != null; ptr = ptr.getNext()) {
+			if(ptr.getNext().getData().equals(target)) {
+				ptr.setNext(ptr.getNext().getNext());
+			}
+		}
+		return front;
+	}
 }
