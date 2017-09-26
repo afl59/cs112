@@ -83,7 +83,7 @@ public class IntLL {
 	}
 	
 	public static void deleteEveryOther(IntNode front) {
-		for(IntNode ptr = front; ptr.getNext() != null; ptr = ptr.getNext()) {
+		for(IntNode ptr = front; ptr.getNext() != null && ptr.getNext().getNext() != null; ptr = ptr.getNext()) {
 			ptr.setNext(ptr.getNext().getNext());
 		}
 	}
@@ -105,7 +105,8 @@ public class IntLL {
 		for(IntNode ptrA = frontL1; ptrA != null; ptrA = ptrA.getNext()) {
 			for(IntNode ptrB = frontL2; ptrB != null; ptrB = ptrB.getNext()) {
 				if(ptrA.getData() == ptrB.getData()) {
-					
+					markEnd.setNext(new IntNode(ptrA.getData(), markEnd));
+					markEnd = markEnd.getNext();
 				}
 			}
 		}

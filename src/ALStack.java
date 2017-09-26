@@ -57,6 +57,7 @@ public class ALStack<T> {
 		System.out.println(songs.peek());
 		System.out.println(songs.pop());
 		System.out.println(songs.pop());
+		System.out.println(songs.size());
 	}
 }
 
