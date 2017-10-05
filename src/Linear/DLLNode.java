@@ -1,3 +1,4 @@
+package Linear;
 
 public class DLLNode<T> {
 	private T data;

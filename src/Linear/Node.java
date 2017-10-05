@@ -1,3 +1,4 @@
+package Linear;
 /*
  * Generic class
  * <T> placeholder for the type we wish to instantiate this class

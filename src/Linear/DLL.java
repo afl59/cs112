@@ -1,3 +1,4 @@
+package Linear;
 
 public class DLL<T> {
 	
@@ -14,6 +15,17 @@ public class DLL<T> {
 		if(front != null) 
 			front.setPrevious(node);
 		front = node;
+	}
+	
+	public DLLNode moveToFront(T target) {
+		DLLNode ptr = front;
+		DLLNode targetNode;
+		do {
+			if (ptr.getNext().getData().equals(target)) { // Selected DLLNode BEFORE target DLLNode
+				targetNode = ptr.getNext();
+				ptr.setNext(ptr.getNext().getNext());
+			}
+		} while (true); // DONE FOR COMPILE
 	}
 	
 	public void addAfterTarget(T data, T target) {

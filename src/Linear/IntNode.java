@@ -1,3 +1,4 @@
+package Linear;
 
 public class IntNode {
 	private int data;

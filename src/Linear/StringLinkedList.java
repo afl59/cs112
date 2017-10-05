@@ -1,3 +1,4 @@
+package Linear;
 
 public class StringLinkedList {
 	private StringNode front; // Handle to linked list
